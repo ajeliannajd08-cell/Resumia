@@ -1,3 +1,4 @@
+const path = require("path");
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
@@ -20,13 +21,8 @@ app.use(express.json());
 ========================================= */
 
 app.get("/", (req, res) => {
-
-    res.send(
-        "Backend de Resumia funcionando correctamente 🚀"
-    );
-
+    res.sendFile(path.join(__dirname, "index.html"));
 });
-
 
 /* =========================================
    IA
